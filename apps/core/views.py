@@ -1,3 +1,4 @@
+from apps.core.models import Servers
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -23,18 +24,22 @@ def dashboards_view(request):
 
 def servers_view(request):
     """Template view for dashboard template."""
+    servers = Servers.objects.all()
     context = {
         'title': 'Dashboard Template',
-        'message': 'Welcome to the Dashboard Template'
+        'message': 'Welcome to the Dashboard Template',
+        'servers': servers
     }
     return render(request, 'core/servers.html', context)
 
 def services_view(request):
     """Template view for dashboard template."""
+    
     context = {
         'title': 'Dashboard Template',
-        'message': 'Welcome to the Dashboard Template'
+        'message': 'Welcome to the Dashboard Template',
     }
+    
     return render(request, 'core/services.html', context)    
 
 def alerts_view(request):
