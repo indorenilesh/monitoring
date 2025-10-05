@@ -25,15 +25,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/dashboards" class="nav-link">
                             <i class="fas fa-chart-bar"></i>
                             <span>Dashboards</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-users"></i>
-                            <span>Users</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -42,13 +36,13 @@
                             <span>Servers</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="/services" class="nav-link">
                             <i class="fas fa-cogs"></i>
                             <span>Services</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="/alerts" class="nav-link">
                             <i class="fas fa-cogs"></i>
                             <span>Alerts</span>
@@ -125,7 +119,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>6</h3>
-                            <p>Running Services</p>
+                            <p>Running Alerts</p>
                             <span class="stat-change positive">75%</span>
                         </div>
                     </div>
@@ -136,7 +130,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>2</h3>
-                            <p>Stopped Services</p>
+                            <p>Stopped Alerts</p>
                             <span class="stat-change negative">25%</span>
                         </div>
                     </div>
@@ -147,20 +141,20 @@
                         </div>
                         <div class="stat-info">
                             <h3>1</h3>
-                            <p>Failed Services</p>
+                            <p>Failed Alerts</p>
                             <span class="stat-change negative">12.5%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Services Overview Section -->
+                <!-- Alerts Overview Section -->
                 <div class="services-overview-section">
                     <div class="services-overview-card">
                         <div class="chart-header">
-                            <h3><i class="fas fa-chart-area"></i> Services Overview</h3>
+                            <h3><i class="fas fa-chart-area"></i> Alerts Overview</h3>
                             <div class="header-controls">
                                 <div class="table-search">
-                                    <input type="text" id="services-search" placeholder="Search services..." class="search-input">
+                                    <input type="text" id="services-search" placeholder="Search alerts..." class="search-input">
                                     <button class="search-btn">
                                         <i class="fas fa-search"></i>
                                     </button>
@@ -267,8 +261,9 @@
         </main>
     </div>
 
-    {% load static %}
-    <script src="{% static 'js/script.js' %}"></script>
+    <!-- {% load static %}
+    <script src="{% static 'js/script.js' %}"></script> -->
+    <script src="static/js/script.js"></script>
 
 </body>
 </html>

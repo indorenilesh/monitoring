@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            //e.preventDefault();
             
             // Remove active class from all nav items
             navLinks.forEach(l => l.parentElement.classList.remove('active'));

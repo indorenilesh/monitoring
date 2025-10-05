@@ -13,6 +13,14 @@ def home(request):
     }
     return render(request, 'core/home.html', context)
 
+def dashboards_view(request):
+    """Template view for dashboard template."""
+    context = {
+        'title': 'Dashboard Template',
+        'message': 'Welcome to the Dashboard Template'
+    }
+    return render(request, 'core/dashboards.html', context)
+
 def servers_view(request):
     """Template view for dashboard template."""
     context = {

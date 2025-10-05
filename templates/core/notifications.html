@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Dashboard</title>
+    <title>Notifications Dashboard</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -25,15 +25,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/dashboards" class="nav-link">
                             <i class="fas fa-chart-bar"></i>
                             <span>Dashboards</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-users"></i>
-                            <span>Users</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -42,7 +36,7 @@
                             <span>Servers</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="/services" class="nav-link">
                             <i class="fas fa-cogs"></i>
                             <span>Services</span>
@@ -54,7 +48,7 @@
                             <span>Alerts</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="/notifications" class="nav-link">
                             <i class="fas fa-cogs"></i>
                             <span>Notifications</span>
@@ -90,12 +84,12 @@
                     <button class="menu-toggle">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <h1>Services Dashboard</h1>
+                    <h1>Notifications Dashboard</h1>
                 </div>
                 <div class="header-right">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search services...">
+                        <input type="text" placeholder="Search notifications...">
                     </div>
                     <button class="notification-btn">
                         <i class="fas fa-bell"></i>
@@ -114,7 +108,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>8</h3>
-                            <p>Total Services</p>
+                            <p>Total Notifications</p>
                             <span class="stat-change positive">+12%</span>
                         </div>
                     </div>
@@ -125,7 +119,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>6</h3>
-                            <p>Running Services</p>
+                            <p>Running Notifications</p>
                             <span class="stat-change positive">75%</span>
                         </div>
                     </div>
@@ -136,7 +130,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>2</h3>
-                            <p>Stopped Services</p>
+                            <p>Stopped Notifications</p>
                             <span class="stat-change negative">25%</span>
                         </div>
                     </div>
@@ -147,20 +141,20 @@
                         </div>
                         <div class="stat-info">
                             <h3>1</h3>
-                            <p>Failed Services</p>
+                            <p>Failed Notifications</p>
                             <span class="stat-change negative">12.5%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Services Overview Section -->
+                <!-- Notifications Overview Section -->
                 <div class="services-overview-section">
                     <div class="services-overview-card">
                         <div class="chart-header">
-                            <h3><i class="fas fa-chart-area"></i> Services Overview</h3>
+                            <h3><i class="fas fa-chart-area"></i> Notifications Overview</h3>
                             <div class="header-controls">
                                 <div class="table-search">
-                                    <input type="text" id="services-search" placeholder="Search services..." class="search-input">
+                                    <input type="text" id="services-search" placeholder="Search notifications..." class="search-input">
                                     <button class="search-btn">
                                         <i class="fas fa-search"></i>
                                     </button>
@@ -267,8 +261,9 @@
         </main>
     </div>
 
-    {% load static %}
-    <script src="{% static 'js/script.js' %}"></script>
+    <!-- {% load static %}
+    <script src="{% static 'js/script.js' %}"></script> -->
+    <script src="/static/js/script.js"></script>
 
 </body>
 </html>
