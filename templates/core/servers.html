@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servers Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar Menu -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-chart-line"></i> Dashboard</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Dashboards</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/servers" class="nav-link">
+                            <i class="fas fa-server"></i>
+                            <span>Servers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/services" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/alerts" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/notifications" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Notifications</span>
+                        </a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-role">Admin</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Servers Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search servers...">
+                    </div>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Total Servers</p>
+                            <span class="stat-change positive">+12%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4</h3>
+                            <p>Linux Servers</p>
+                            <span class="stat-change positive">80%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1</h3>
+                            <p>Windows Servers</p>
+                            <span class="stat-change negative">20%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1</h3>
+                            <p>Disabled Servers</p>
+                            <span class="stat-change negative">20%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servers Overview Section -->
+                <div class="servers-overview-section">
+                    <div class="servers-overview-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-area"></i> Servers Overview</h3>
+                            <div class="header-controls">
+                                <div class="table-search">
+                                    <input type="text" id="servers-search" placeholder="Search servers..." class="search-input">
+                                    <button class="search-btn">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="chart-controls">
+                                    <button class="btn-secondary">Add</button>
+                                    <button class="btn-secondary active">Delete</button>
+                                    <button class="btn-secondary">Disable</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="servers-table-container">
+                            <table class="servers-table">
+                                <thead>
+                                    <tr>
+                                        <th class="checkbox-column">
+                                            <input type="checkbox" id="select-all" class="checkbox-input">
+                                        </th>
+                                        <th class="sortable" data-column="hostname">
+                                            Hostname
+                                            <i class="fas fa-sort sort-icon"></i>
+                                        </th>
+                                        <th class="sortable" data-column="os">
+                                            OS
+                                            <i class="fas fa-sort sort-icon"></i>
+                                        </th>
+                                        <th class="sortable" data-column="ip">
+                                            IP
+                                            <i class="fas fa-sort sort-icon"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="checkbox-column">
+                                            <input type="checkbox" class="checkbox-input">
+                                        </td>
+                                        <td>web-server-01</td>
+                                        <td>Ubuntu 20.04</td>
+                                        <td>192.168.1.10</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-column">
+                                            <input type="checkbox" class="checkbox-input">
+                                        </td>
+                                        <td>db-server-01</td>
+                                        <td>CentOS 8</td>
+                                        <td>192.168.1.11</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-column">
+                                            <input type="checkbox" class="checkbox-input">
+                                        </td>
+                                        <td>app-server-01</td>
+                                        <td>Windows Server 2019</td>
+                                        <td>192.168.1.12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-column">
+                                            <input type="checkbox" class="checkbox-input">
+                                        </td>
+                                        <td>mail-server-01</td>
+                                        <td>Ubuntu 22.04</td>
+                                        <td>192.168.1.13</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-column">
+                                            <input type="checkbox" class="checkbox-input">
+                                        </td>
+                                        <td>backup-server-01</td>
+                                        <td>Debian 11</td>
+                                        <td>192.168.1.14</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
