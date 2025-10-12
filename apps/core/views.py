@@ -28,7 +28,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('core:login')
 
 @login_required(login_url='core:login')
 def home(request):

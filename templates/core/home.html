@@ -98,7 +98,7 @@
                     <div class="user-menu">
                         <button class="user-btn">
                             <i class="fas fa-user"></i>
-                            <span class="user-name">John Doe</span>
+                            <span class="user-name">{{ request.user.get_full_name|default:request.user.username }}</span>
                         </button>
                         <div class="dropdown">
                             <a href="{% url 'core:password_change' %}">Change Password</a>
