@@ -1005,3 +1005,57 @@ body {
         font-size: 3rem;
     }
 }
+
+/* User dropdown menu */
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-btn {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.user-btn:hover {
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.user-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 120%; /* below the button */
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.user-menu .dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.user-menu .dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.user-menu:hover .dropdown {
+    display: block;
+}
